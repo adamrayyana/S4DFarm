@@ -8,6 +8,9 @@ rewritten by the C4T BuT S4D team over the years.
     (don't forget to change the `SERVER_PASSWORD`).
 - Change external_redis password in docker-compose.yml (of you're planning to use it).
 - `docker compose up --build -d`
+> Note:
+>
+> Kalo error pas ngepull alpine jalanin `docker pull redis:7.2.0-alpine`
 - **GLHF**
 
 Some screenshots:
