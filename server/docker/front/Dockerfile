@@ -7,6 +7,7 @@ COPY front /app
 WORKDIR /app
 
 FROM front-base AS front-build
+RUN corepack use pnpm@8.x
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 RUN pnpm run build
 
