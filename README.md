@@ -18,6 +18,15 @@ rewritten by the C4T BuT S4D team over the years.
 - Ganti config `SYSTEM_URL` dan `SYSTEM_TOKEN`
 - Ganti regex jika diperlukan (defaultnya itu 32 character base64)
 
+## What To Do During Compe
+
+- Bikin exploit di `client/`
+- Jalanin pake ./start_sploit.py <nama_exploit> 
+> **!!!! IMPORTANT !!!!**
+>
+> Make sure nyalain flush=True kalo mau ngeprint ke stdout
+> Kalo ga dinyalain ga kedetect 
+
 Some screenshots:
 
 ![flags](resources/flags.png)

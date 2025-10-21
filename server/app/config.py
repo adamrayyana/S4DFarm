@@ -22,7 +22,8 @@ CONFIG = {
     'TEAMS': _fetch_teams(),
     # 'FLAG_FORMAT': r'CTF\.Moscow\{[a-zA-Z\.0-9_-]+\}',
     # 'FLAG_FORMAT': r'VolgaCTF{[\w-]*\.[\w-]*\.[\w-]*}',
-    'FLAG_FORMAT': r'[A-Z0-9]{31}=',
+    # TODO: TEMPORARY REGEX, SHOULD WORK BUT BETTER TO CHANGE INTO CORRECT FORMAT LATER
+    'FLAG_FORMAT': r'\{([^\}]*)\}',
 
     # 'SYSTEM_PROTOCOL': 'ructf_http',
     # 'SYSTEM_URL': 'http://monitor.ructfe.org/flags',
