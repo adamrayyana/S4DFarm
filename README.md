@@ -13,6 +13,11 @@ rewritten by the C4T BuT S4D team over the years.
 > Kalo error pas ngepull alpine jalanin `docker pull redis:7.2.0-alpine`
 - **GLHF**
 
+## What To Do Before Compe
+
+- Ganti config `SYSTEM_URL` dan `SYSTEM_TOKEN`
+- Ganti regex jika diperlukan (defaultnya itu 32 character base64)
+
 Some screenshots:
 
 ![flags](resources/flags.png)

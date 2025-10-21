@@ -1,14 +1,25 @@
 import os
-
-# import validators.volgactf
+import requests
+# TODO: CHANGE BEFORE COMPE
+URL_API = 'http://host.docker.internal:3232/api/'
+def _fetch_teams():
+    resp = requests.get(URL_API + 'user')
+    if resp.status_code == 200:
+        resp = resp.json()
+    else:
+        raise Exception(f'Status code not success: {resp.status_code}')
+        
+    data = {
+        f"{x['username']} [Team #{x['id']}]": x['host_ip']
+        for x in resp
+    }
+    
+    return data
 
 CONFIG = {
     'DEBUG': os.getenv('DEBUG') == '1',
 
-    'TEAMS': {
-        f'Team #{i}': f'10.60.{i}.3'
-        for i in range(0, 10)
-    },
+    'TEAMS': _fetch_teams(),
     # 'FLAG_FORMAT': r'CTF\.Moscow\{[a-zA-Z\.0-9_-]+\}',
     # 'FLAG_FORMAT': r'VolgaCTF{[\w-]*\.[\w-]*\.[\w-]*}',
     'FLAG_FORMAT': r'[A-Z0-9]{31}=',
@@ -20,9 +31,8 @@ CONFIG = {
     # Currently used protocol is for WreckIT
     'SYSTEM_PROTOCOL': 'wreckit_http',
     
+    'SYSTEM_URL': URL_API + 'flag',
     # TODO: CHANGE BEFORE COMPE
-    # FROM HERE -
-    'SYSTEM_URL': 'http://host.docker.internal:3232/api/flag',
     'SYSTEM_TOKEN': '4fdcd6e54faa8991',
     # - TO HERE
     
