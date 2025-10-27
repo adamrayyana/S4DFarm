@@ -1,7 +1,7 @@
 import os
 import requests
 # TODO: CHANGE BEFORE COMPE
-URL_API = 'http://host.docker.internal:3232/api/'
+URL_API = 'https://gemastik-api.siberlab.id/api/'
 def _fetch_teams():
     resp = requests.get(URL_API + 'user')
     if resp.status_code == 200:
@@ -18,7 +18,7 @@ def _fetch_teams():
 
 CONFIG = {
     'DEBUG': os.getenv('DEBUG') == '1',
-
+    
     'TEAMS': _fetch_teams(),
     # 'FLAG_FORMAT': r'CTF\.Moscow\{[a-zA-Z\.0-9_-]+\}',
     # 'FLAG_FORMAT': r'VolgaCTF{[\w-]*\.[\w-]*\.[\w-]*}',
@@ -34,7 +34,7 @@ CONFIG = {
     
     'SYSTEM_URL': URL_API + 'flag',
     # TODO: CHANGE BEFORE COMPE
-    'SYSTEM_TOKEN': '4fdcd6e54faa8991',
+    'SYSTEM_TOKEN': '',
     # - TO HERE
     
     # 'SYSTEM_PROTOCOL': 'volgactf',
